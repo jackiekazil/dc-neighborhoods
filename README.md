@@ -1,0 +1,1 @@
+See geo_file_info.csv for metadata associated with the data in this directory.
