@@ -18,8 +18,9 @@ feature = {}
 count = 0
 for f in data['features']:
 	if count < 1:
-		file_name = f['properties']['DESCRIPTIO']
-		file_name = file_name.replace(' ','-').lower()
+		nbhd_id = f['properties']['NBHD']
+		nbhd_name = f['properties']['NEIGHBORHO']
+		file_name = nbhd_name.replace(' ','-').lower() + '-' + nbhd_id
 
 		feature['geometry'] = f['geometry']
 		feature['type'] = f['type']
