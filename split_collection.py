@@ -21,9 +21,16 @@ data = json.load(json_data)
 feature = {}
 
 for f in data['features']:
-	nbhd_id = f['properties']['NBHD']
-	nbhd_name = slugify(f['properties']['NEIGHBORHO'])
-	file_name = nbhd_name + '-' + nbhd_id
+
+	feature_id = f['properties']['GIS_ID']
+	# neighborhood 	f['properties']['NBHD']
+	# neighborhood cluster f['properties']['GIS_ID']
+
+	name = slugify(f['properties']['NBH_NAMES'])
+	# neighborhood -- slugify(f['properties']['NEIGHBORHO'])
+	# neighborhood cluster -- slugify(f['properties']['NBH_NAMES'])
+
+	file_name = name + '-' + feature_id
 
 	feature['geometry'] = f['geometry']
 	feature['type'] = f['type']
